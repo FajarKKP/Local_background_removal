@@ -48,7 +48,12 @@ while cap.isOpened():
 
     blurred_bg = cv2.GaussianBlur(frame, (55,55), 0)
 
+    # Blur background
     output = (mask_3c * blurred_bg + (1 - mask_3c) * frame).astype(np.uint8)
+
+    # # Blur foreground
+    # output = (mask_3c * frame + (1 - mask_3c) * blurred_bg).astype(np.uint8)
+
 
     cv2.imshow("Background Blur (test with mediapipe)", output)
 
