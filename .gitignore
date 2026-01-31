@@ -1,0 +1,39 @@
+# ======================
+# Python virtual env
+# ======================
+.lbr_env/
+lbr_env/
+ENV/
+env/
+
+# ======================
+# Python cache / bytecode
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ======================
+# VS Code
+# ======================
+.vscode/
+!.vscode/settings.json
+
+# ======================
+# Jupyter
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# Build / distribution
+# ======================
+build/
+dist/
+*.egg-info/
+
+# ======================
+# OS junk
+# ======================
+.DS_Store
+Thumbs.db
