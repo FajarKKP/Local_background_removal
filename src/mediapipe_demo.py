@@ -46,7 +46,9 @@ while cap.isOpened():
     mask = np.clip(mask, 0, 1)
     mask_3c = np.stack([mask] * 3, axis=-1)
 
-    blurred_bg = cv2.GaussianBlur(frame, (55,55), 0)
+    sigma = frame.shape[1] / 20 # The smaller the denominator, the more blurry but slower (computational heavy)
+
+    blurred_bg = cv2.GaussianBlur(frame, (0,0), sigmaX=sigma)
 
     # Blur background
     output = (mask_3c * blurred_bg + (1 - mask_3c) * frame).astype(np.uint8)
